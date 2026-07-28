@@ -37,9 +37,9 @@
     "README.md"
   ],
   "scripts": {
-    "build": "npm run clean && npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc -p tsconfig.build.json --outDir dist/esm",
-    "build:cjs": "tsc -p tsconfig.build.cjs.json --outDir dist/cjs",
+    "build": "node init && npm run clean && npm run build:esm && npm run build:cjs",
+    "build:esm": "node init && tsc -p tsconfig.build.json --outDir dist/esm",
+    "build:cjs": "node init && tsc -p tsconfig.build.cjs.json --outDir dist/cjs",
     "clean": "rm -rf dist",
     "test": "vitest run",
     "typecheck": "tsc --noEmit -p tsconfig.json",
